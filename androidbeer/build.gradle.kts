@@ -2,11 +2,16 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.kotlinAndroid)
+    alias(libs.plugins.ksp)
 }
 
 android {
     namespace = "sobaya.app.androidbeer"
     compileSdk = 34
+
+    sourceSets.all {
+        kotlin.srcDir("build/generated/ksp/$name/kotlin")
+    }
 
     defaultConfig {
         applicationId = "sobaya.app.androidbeer"
@@ -60,6 +65,17 @@ dependencies {
     implementation(libs.compose.ui.graphics)
     implementation(libs.compose.ui.tooling.preview)
     implementation(libs.compose.material3)
+    implementation(libs.coil.kt)
+    implementation(libs.coil.kt.compose)
+
+    implementation(platform(libs.koin.bom))
+    implementation(platform(libs.koin.annotation.bom))
+    implementation(libs.koin.core)
+    implementation(libs.koin.annotation)
+    implementation(libs.koin.android)
+    implementation(libs.koin.compose)
+    ksp(libs.koin.compiler)
+
 //    testImplementation(libs.junit)
 //    androidTestImplementation(libs.androidx.test.junit)
 //    androidTestImplementation(libs.androidx.espresso.core)

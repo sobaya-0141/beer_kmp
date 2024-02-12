@@ -34,12 +34,26 @@ kotlin {
     }
 
     sourceSets {
+        kotlin {
+            explicitApi()
+        }
+        all {
+            languageSettings.optIn("kotlinx.cinterop.ExperimentalForeignApi")
+        }
         commonMain.dependencies {
             implementation(libs.kotlinx.coroutines.core)
             implementation(libs.kotlinx.serialization.json)
             implementation(libs.kotlinx.datetime)
             implementation(libs.kermit)
             implementation(libs.ktorfit.lib)
+            api(libs.kmm.viewmodel)
+            implementation(libs.content.negotiation)
+            implementation(libs.ktorSerialization)
+
+//            implementation(project.dependencies.platform(libs.koin.bom))
+//            implementation(project.dependencies.platform(libs.koin.annotation.bom))
+            implementation("${libs.koin.core.get().module}:${libs.koin.bom.get().version}")
+            implementation("${libs.koin.annotation.asProvider().get().module}:${libs.koin.annotation.bom.get().version}")
         }
 
         commonTest.dependencies {
@@ -97,4 +111,5 @@ dependencies {
     add("kspAndroid", libs.ktorfit)
     add("kspIosArm64", libs.ktorfit)
     add("kspIosX64", libs.ktorfit)
+    ksp(libs.koin.compiler)
 }

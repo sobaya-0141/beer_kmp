@@ -1,9 +1,9 @@
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 rootProject.name = "beer_kmp"
 include(":core")
-includeBuild("convention-plugins")
 
 pluginManagement {
+    includeBuild("convention-plugins")
     repositories {
         google()
         gradlePluginPortal()

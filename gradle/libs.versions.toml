@@ -15,8 +15,6 @@ ktorfit = "1.12.0"
 ksp = "1.9.22-1.0.16"
 androidxCore = "1.12.0"
 coil = "2.5.0"
-hilt = "2.48.1"
-hiltExt = "1.1.0"
 googleOss = "17.0.1"
 googleOssPlugin = "0.10.6"
 androidxNavigation = "2.7.6"
@@ -24,6 +22,10 @@ androidxActivity = "1.8.2"
 androidxCoreSplashscreen = "1.0.1"
 androidxLifecycle = "2.7.0"
 androidxHiltNavigationCompose = "1.1.0"
+koin-bom = "3.5.3"
+koin-annotation = "1.3.1"
+kmm-viewmodel = "1.0.0-ALPHA-18"
+ktor = "2.3.6"
 
 [libraries]
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
@@ -61,13 +63,18 @@ coil-kt-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "
 coil-kt-svg = { group = "io.coil-kt", name = "coil-svg", version.ref = "coil" }
 google-oss-licenses = { group = "com.google.android.gms", name = "play-services-oss-licenses", version.ref = "googleOss" }
 google-oss-licenses-plugin = { group = "com.google.android.gms", name = "oss-licenses-plugin", version.ref = "googleOssPlugin" }
-hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
-hilt-android-testing = { group = "com.google.dagger", name = "hilt-android-testing", version.ref = "hilt" }
-hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
-hilt-ext-compiler = { group = "androidx.hilt", name = "hilt-compiler", version.ref = "hiltExt" }
-hilt-ext-work = { group = "androidx.hilt", name = "hilt-work", version.ref = "hiltExt" }
 ktorfit = { module = "de.jensklingenberg.ktorfit:ktorfit-ksp", version.ref = "ktorfit" }
 ktorfit-lib = { module = "de.jensklingenberg.ktorfit:ktorfit-lib", version.ref = "ktorfit" }
+koin-bom = { group = "io.insert-koin", name = "koin-bom", version.ref = "koin-bom" }
+koin-core = { group = "io.insert-koin", name = "koin-core" }
+koin-android = { group = "io.insert-koin", name = "koin-android" }
+koin-compose = { module = "io.insert-koin:koin-androidx-compose" }
+koin-annotation-bom = { group = "io.insert-koin", name = "koin-annotations-bom", version.ref = "koin-annotation" }
+koin-annotation = { module = "io.insert-koin:koin-annotations" }
+koin-compiler = { module = "io.insert-koin:koin-ksp-compiler", version.ref = "koin-annotation" }
+kmm-viewmodel = { module = "com.rickclephas.kmm:kmm-viewmodel-core", version.ref = "kmm-viewmodel" }
+content-negotiation = { module = "io.ktor:ktor-client-content-negotiation", version.ref = "ktor" }
+ktorSerialization = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
@@ -80,5 +87,4 @@ kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 skiePlugin = { id = "co.touchlab.skie", version.ref = "skie" }
 ktorfitPlugin = { id = "de.jensklingenberg.ktorfit", version.ref = "ktorfit" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
-hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 ktorfit = { id = "de.jensklingenberg.ktorfit", version.ref = "ktorfit" }
